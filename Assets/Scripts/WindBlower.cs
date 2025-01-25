@@ -50,6 +50,7 @@ public class WindBlower : MonoBehaviour
 
         // Set the WindForce based on the RMS value
         WindForce = wavePeak * windMultiplier;
+        Debug.Log("WindForce " + WindForce);
 
         // Debug log to monitor WindForce
         // Debug.Log("WindForce: " + WindForce);

@@ -1,10 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Rigidbody2D _rb;
+    [SerializeField] GameObject m_Bubble;
+    [SerializeField] float m_DistanceFromTarget;
+    [SerializeField] LayerMask m_BackgroundLayer;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +19,20 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(transform.position);
+        transform.LookAt(m_Bubble.transform.position);
+        transform.position = GetMousePositionIG(Input.mousePosition);
+    }
+
+    Vector3 GetMousePositionIG(Vector2 mousePositionOnScreen)
+    {
+        Vector3 startPos = new(mousePositionOnScreen.x, mousePositionOnScreen.y, Camera.main.nearClipPlane);
+
+        //Get ray from mouse postion
+        Ray rayCast = Camera.main.ScreenPointToRay(startPos);
+
+        //Raycast and check if any object is hit
+        Physics.Raycast(rayCast, out RaycastHit hit, Camera.main.farClipPlane, m_BackgroundLayer);
+        Debug.DrawLine(Camera.main.transform.position, hit.point, Color.red);
+        return new Vector3(hit.point.x, hit.point.y, 0);
     }
 }

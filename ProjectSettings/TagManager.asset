@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - EnemyBubble
+  - Bubble
   layers:
   - Default
   - TransparentFX

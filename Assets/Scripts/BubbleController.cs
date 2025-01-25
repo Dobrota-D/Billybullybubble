@@ -4,11 +4,11 @@ using UnityEngine;
 public class BubbleController : MonoBehaviour
 {
     public float scaleMultiplier = 1.2f;
-    private Gamemanager gameManager;
+    private GameManager gameManager;
 
     private void Start()
     {
-       gameManager = FindObjectOfType<Gamemanager>();
+       gameManager = FindObjectOfType<GameManager>();
     }
 
     private void OnCollisionEnter(Collision other)

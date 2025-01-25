@@ -10,13 +10,13 @@ enum GameState
     Gameover
 }
 
-public class Gamemanager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     private static bool _created = false;
 
     private GameState _state;
 
-    public static Gamemanager Instance = null;
+    public static GameManager Instance = null;
     private UIManager _uiManager;
     private void Awake()
     {

@@ -6,10 +6,10 @@ public class WindBlower : MonoBehaviour
 {
     public float[] data;
     private string device;
-    public AudioClip audioClip;
     public AudioSource audioSource;
-    public BoxCollider2D WindBox;
     public float WindForce;
+    public float micGate;
+    public Rigidbody billyBullRb;
 
     // A multiplier to scale the WindForce value
     public float forceMultiplier = 10f;
@@ -52,15 +52,23 @@ public class WindBlower : MonoBehaviour
 
     void ApplyWindForce()
     {
-        // Example: Apply the WindForce to the BoxCollider2D or related behavior
-        if (WindBox != null)
+        if (WindForce >= micGate)
         {
-            Rigidbody2D rb = WindBox.GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.AddForce(Vector2.right * WindForce);
-            }
+            billyBullRb.AddForce(Vector3.right * WindForce);
         }
+        
+        // // Example: Apply the WindForce to the BoxCollider2D or related behavior
+        // if (WindBox != null)
+        // {
+        //     Rigidbody rb = WindBox.GetComponent<Rigidbody>();
+        //     if (rb != null)
+        //     {
+        //         if (WindForce >= micGate)
+        //         {
+        //             rb.AddForce(Vector3.right * WindForce);
+        //         }
+        //     }
+        // }
     }
 
 }

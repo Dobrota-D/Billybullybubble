@@ -19,7 +19,17 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(m_Bubble.transform.position);
+        var direction = m_Bubble.transform.position - transform.position;
+        transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
+        if (direction.x < 0)
+        {
+            transform.Rotate(0, 180, 0);
+        }
+        else
+        {
+            transform.Rotate(0, 0, 0);
+        }
+        transform.Rotate(0,0,90);
         transform.position = GetMousePositionIG(Input.mousePosition);
     }
 

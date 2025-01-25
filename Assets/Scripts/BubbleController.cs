@@ -1,10 +1,17 @@
+using System;
 using UnityEngine;
 
 public class BubbleController : MonoBehaviour
 {
     public float moveSpeed = 2f;
     public float scaleMultiplier = 1.2f;
-    
+    private Gamemanager gameManager;
+
+    private void Start()
+    {
+       gameManager = FindObjectOfType<Gamemanager>();
+    }
+
     void Update()
     {
         if (Input.GetKey(KeyCode.W))
@@ -34,9 +41,22 @@ public class BubbleController : MonoBehaviour
         }
     }
 
+    private void ExplodeBubble()
+    {
+        // Destroy(gameObject);
+        gameManager.GameOver();
+    }
+    
     private void IncreaseScale(GameObject other)
     {
         transform.localScale *= scaleMultiplier;
+        // transform.localScale *= 6f;
         Destroy(other);
+        if (transform.localScale.x >= 5f)
+        {
+            ExplodeBubble();
+        }
     }
+
+
 }

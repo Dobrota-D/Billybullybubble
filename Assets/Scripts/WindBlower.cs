@@ -44,7 +44,7 @@ public class WindBlower : MonoBehaviour
         WindForce = rms * forceMultiplier;
 
         // Debug log to monitor WindForce
-        Debug.Log("WindForce: " + WindForce);
+        // Debug.Log("WindForce: " + WindForce);
 
         // Optionally, apply WindForce to the WindBox or other game logic
         ApplyWindForce();

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3e6fbdd06fab91b468bce4f71350de66
+guid: ace1c6835ac7374429798e931a293446
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fb097aa2ccd13f4394d5b65aa3ee4a5
-      internalID: 332674351
+      spriteID: 71adb3dae3cb9e240a766a2e8445d4dc
+      internalID: 203867445
       vertices: []
       indices: 
       edges: []
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5af86bb1048eeb94eb07807391536d0a
-      internalID: 895236462
+      spriteID: d5ee42c93c73ed144b376fe4372d3ab7
+      internalID: 290148925
       vertices: []
       indices: 
       edges: []
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ef26beae2e2047438ba4ea2a7df173f
-      internalID: 1127235851
+      spriteID: f64212287056bd54a8597b868a9f460d
+      internalID: -276790418
       vertices: []
       indices: 
       edges: []
@@ -183,9 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bubble_0: 332674351
-      bubble_1: 895236462
-      bubble_2: 1127235851
+      bubble_0: 203867445
+      bubble_1: 290148925
+      bubble_2: -276790418
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

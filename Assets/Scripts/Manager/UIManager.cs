@@ -1,18 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("General")]
+    [SerializeField] private TMP_Text m_Timer;
+    [SerializeField] private TMP_Text m_TryCounter;
+
+    public static UIManager Instance = null;
+    private void Awake()
     {
-        
+        if (Instance == null) // If there is no instance already
+            Instance = this;
+        else if (Instance != this)
+            Destroy(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateBubbleCounter(float nb)
     {
-        
+        m_TryCounter.text = "Essais : " + nb;
+    }
+
+    public void UpdateTimeCounter(float time)
+    {
+        float minutes = Mathf.FloorToInt(time / 60);
+        float seconds = Mathf.FloorToInt(time % 60);
+        m_Timer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }

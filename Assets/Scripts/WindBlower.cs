@@ -4,47 +4,56 @@ using UnityEngine;
 
 public class WindBlower : MonoBehaviour
 {
-    public float[] data;
+    private float[] data;
     public AudioSource audioSource;
     public float micGate;
     public Rigidbody billyBullRb;
-    public float pushForce = 5f;
+    public float pushForce = 3f;
     
-    private const float windMultiplier = 10f;
+    public const float windMultiplier = 10f;
     private float WindForce;
+
     private string device;
-    
+
+    int decibel = 128;
+
+    AudioClip microphoneInput;
+    public bool flapped;
+
     void Start()
     {
-        data = new float[128];
-        device = Microphone.devices[0];
-        audioSource = GetComponent<AudioSource>();
-        audioSource.clip = Microphone.Start(device, true, 10, 44100);
-        audioSource.loop = true;
+        data = new float[decibel];
 
-        // Wait for the microphone to start recording
-        while (!(Microphone.GetPosition(device) > 0)) { }
-        audioSource.Play();
+        //init microphone input
+        if (Microphone.devices.Length > 0)
+        {
+            device = Microphone.devices[0];
+            microphoneInput = Microphone.Start(device, true, 10, 44100);
+        }
     }
 
     void Update()
     {
-        // Get the audio data
-        audioSource.GetOutputData(data, 0);
 
-        // Calculate the RMS value of the audio data
-        float rms = 0f;
-        for (int i = 0; i < data.Length; i++)
+        //get mic volume
+        int micPosition = Microphone.GetPosition(device) - (decibel + 1); // null means the first microphone
+        if (micPosition < 0) return;
+        microphoneInput.GetData(data, micPosition);
+
+        // Getting a peak on the last 128 samples
+        float wavePeak = 0;
+        for (int i = 0; i < decibel; i++)
         {
-            rms += data[i] * data[i];
+            wavePeak += data[i] * data[i];
         }
-        rms = Mathf.Sqrt(rms / data.Length);
+        float level = Mathf.Sqrt(Mathf.Sqrt(wavePeak));
 
         // Set the WindForce based on the RMS value
-        WindForce = rms * windMultiplier;
+        WindForce = wavePeak * windMultiplier;
+        Debug.Log("WindForce " + WindForce);
 
         // Debug log to monitor WindForce
-        Debug.Log("WindForce: " + WindForce);
+        // Debug.Log("WindForce: " + WindForce);
 
         // Optionally, apply WindForce to the WindBox or other game logic
         ApplyWindForce();

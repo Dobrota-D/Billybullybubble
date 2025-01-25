@@ -5,15 +5,15 @@ using UnityEngine;
 public class WindBlower : MonoBehaviour
 {
     public float[] data;
-    private string device;
     public AudioSource audioSource;
-    public float WindForce;
     public float micGate;
     public Rigidbody billyBullRb;
-
-    // A multiplier to scale the WindForce value
-    public float forceMultiplier = 1f;
-
+    public float pushForce = 5f;
+    
+    private const float windMultiplier = 10f;
+    private float WindForce;
+    private string device;
+    
     void Start()
     {
         data = new float[128];
@@ -41,7 +41,7 @@ public class WindBlower : MonoBehaviour
         rms = Mathf.Sqrt(rms / data.Length);
 
         // Set the WindForce based on the RMS value
-        WindForce = rms * forceMultiplier;
+        WindForce = rms * windMultiplier;
 
         // Debug log to monitor WindForce
         Debug.Log("WindForce: " + WindForce);
@@ -54,7 +54,7 @@ public class WindBlower : MonoBehaviour
     {
         if (WindForce >= micGate)
         {
-            billyBullRb.AddForce(Vector3.right * WindForce);
+            billyBullRb.AddForce(transform.right * pushForce);
         }
     }
 

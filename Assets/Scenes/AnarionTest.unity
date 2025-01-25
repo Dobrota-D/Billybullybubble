@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 429662362}
   - component: {fileID: 429662361}
   - component: {fileID: 429662360}
+  - component: {fileID: 429662363}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -187,7 +188,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -214,6 +215,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &429662363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429662359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 700410b790915294d89282fa6df82201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BillyBubble: {fileID: 1773172557}
 --- !u!1 &506238016
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,10 +239,10 @@ GameObject:
   - component: {fileID: 506238022}
   - component: {fileID: 506238023}
   - component: {fileID: 506238019}
-  - component: {fileID: 506238018}
   - component: {fileID: 506238017}
   - component: {fileID: 506238025}
   - component: {fileID: 506238024}
+  - component: {fileID: 506238018}
   - component: {fileID: 506238026}
   m_Layer: 0
   m_Name: Ghost
@@ -348,9 +362,9 @@ MonoBehaviour:
   data: []
   audioSource: {fileID: 506238017}
   WindForce: 0
-  micGate: 1
+  micGate: 10
   billyBullRb: {fileID: 1773172552}
-  forceMultiplier: 10
+  forceMultiplier: 50
 --- !u!65 &506238019
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -553,6 +567,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6450743421160404846, guid: e38ce256d3f28f3458e542c96fd0abe6, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6900790743166333149, guid: e38ce256d3f28f3458e542c96fd0abe6, type: 3}
       propertyPath: m_Name
       value: Billy Bull
@@ -566,21 +584,13 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9026595580425299252, guid: e38ce256d3f28f3458e542c96fd0abe6, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9026595580425299252, guid: e38ce256d3f28f3458e542c96fd0abe6, type: 3}
       propertyPath: m_Constraints
       value: 112
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4212962981415212093, guid: e38ce256d3f28f3458e542c96fd0abe6, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6900790743166333149, guid: e38ce256d3f28f3458e542c96fd0abe6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1773172549}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e38ce256d3f28f3458e542c96fd0abe6, type: 3}
 --- !u!1 &1017167201
 GameObject:
@@ -797,7 +807,7 @@ PrefabInstance:
     - target: {fileID: 1953871117489246378, guid: baf47bfe014ad534fbc268404417566d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 16528f9ef87213c4885c10799b4419a2, type: 2}
+      objectReference: {fileID: 2100000, guid: c50456e511e52264a94adb197e5c12ab, type: 2}
     - target: {fileID: 9072167901974554041, guid: baf47bfe014ad534fbc268404417566d, type: 3}
       propertyPath: m_LocalScale.x
       value: 116.99904
@@ -860,23 +870,14 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6900790743166333149, guid: e38ce256d3f28f3458e542c96fd0abe6, type: 3}
   m_PrefabInstance: {fileID: 615483906}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1773172549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1773172542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0168f5cc5fefb248aa5dd17236e9cd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 2
-  incrementationDeLaDimensionDeLaBulle: 1.2
 --- !u!54 &1773172552 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 9026595580425299252, guid: e38ce256d3f28f3458e542c96fd0abe6, type: 3}
+  m_PrefabInstance: {fileID: 615483906}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1773172557 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1362608535417480019, guid: e38ce256d3f28f3458e542c96fd0abe6, type: 3}
   m_PrefabInstance: {fileID: 615483906}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807

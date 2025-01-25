@@ -1,14 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-public class BillyBullController : MonoBehaviour
+public class BubbleController : MonoBehaviour
 {
     public float moveSpeed = 2f;
-    public float incrementationDeLaDimensionDeLaBulle = 1.2f;
+    public float scaleMultiplier = 1.2f;
     
     void Update()
     {
@@ -35,13 +30,13 @@ public class BillyBullController : MonoBehaviour
         Debug.Log("collision");
         if (other.collider.CompareTag("EnemyBubble"))
         {
-            GrossirBillyLaBulle(other.gameObject);
+            IncreaseScale(other.gameObject);
         }
     }
 
-    private void GrossirBillyLaBulle(GameObject other)
+    private void IncreaseScale(GameObject other)
     {
-        transform.localScale *= incrementationDeLaDimensionDeLaBulle;
+        transform.localScale *= scaleMultiplier;
         Destroy(other);
     }
 }

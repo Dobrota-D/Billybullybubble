@@ -43,6 +43,6 @@ public class PlayerMovement : MonoBehaviour
         //Raycast and check if any object is hit
         Physics.Raycast(rayCast, out RaycastHit hit, Camera.main.farClipPlane, m_BackgroundLayer);
         Debug.DrawLine(Camera.main.transform.position, hit.point, Color.red);
-        return new Vector3(hit.point.x, hit.point.y, 0);
+        return new Vector3(hit.point.x, hit.point.y, -1);
     }
 }

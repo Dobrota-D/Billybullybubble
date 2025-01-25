@@ -12,7 +12,7 @@ public class WindBlower : MonoBehaviour
     public Rigidbody billyBullRb;
 
     // A multiplier to scale the WindForce value
-    public float forceMultiplier = 10f;
+    public float forceMultiplier = 1f;
 
     void Start()
     {
@@ -56,19 +56,6 @@ public class WindBlower : MonoBehaviour
         {
             billyBullRb.AddForce(Vector3.right * WindForce);
         }
-        
-        // // Example: Apply the WindForce to the BoxCollider2D or related behavior
-        // if (WindBox != null)
-        // {
-        //     Rigidbody rb = WindBox.GetComponent<Rigidbody>();
-        //     if (rb != null)
-        //     {
-        //         if (WindForce >= micGate)
-        //         {
-        //             rb.AddForce(Vector3.right * WindForce);
-        //         }
-        //     }
-        // }
     }
 
 }

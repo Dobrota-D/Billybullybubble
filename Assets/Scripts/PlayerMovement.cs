@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] GameObject m_Bubble;
     [SerializeField] float m_DistanceFromTarget;
     [SerializeField] LayerMask m_BackgroundLayer;
+    [SerializeField] float distanceFromBubble = 2f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,9 @@ public class PlayerMovement : MonoBehaviour
         }
         transform.Rotate(0,0,90);
         transform.position = GetMousePositionIG(Input.mousePosition);
+        
+        // Set Distance from bubble
+        transform.position = (transform.position - m_Bubble.transform.position).normalized * distanceFromBubble + m_Bubble.transform.position;
     }
 
     Vector3 GetMousePositionIG(Vector2 mousePositionOnScreen)

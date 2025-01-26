@@ -6,7 +6,7 @@ using UnityEngine;
 public class Blow : MonoBehaviour
 {
     [SerializeField] AudioSource m_audioSource;
-    public Vector2 blowForce;
+    public float blowForce = 7.5f;
 
     private void Update()
     {
@@ -24,7 +24,7 @@ public class Blow : MonoBehaviour
 
             if (rb != null)
             {
-                rb.AddForce(blowForce, ForceMode2D.Impulse);
+                rb.AddForce(transform.right * blowForce, ForceMode2D.Impulse);
             }
         }
     }

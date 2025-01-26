@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator PlayerDeathCoroutine()
     {
         animator.SetTrigger("death");
-        GameManager.Instance._audioSource.PlayOneShot(deathSound, 0.5f);
+        GameManager.Instance._audioSource.PlayOneShot(deathSound, 1f);
         GameManager.Instance.SetGameState(GameState.PlayerDeath);
 
         // TODO bubble explosion

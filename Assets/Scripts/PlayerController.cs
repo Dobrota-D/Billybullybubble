@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     public GameObject ghost, bubble;
     public Animator animator;
+    public float deathAnimationDuration = 3.5f;
     
     [Header("Sound")]
     public AudioClip deathSound;
@@ -22,9 +23,14 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetTrigger("death");
         GameManager.Instance._audioSource.PlayOneShot(deathSound, 0.5f);
-        yield return new WaitForSeconds(4f);
+        GameManager.Instance.SetGameState(GameState.PlayerDeath);
+
+        // TODO bubble explosion
+        bubble.SetActive(false);
+        yield return new WaitForSeconds(deathAnimationDuration);
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
+        GameManager.Instance.SetGameState(GameState.Playing);
         // Destroy(bubble);
         yield return null;
     }

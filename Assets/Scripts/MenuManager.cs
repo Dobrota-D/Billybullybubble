@@ -11,7 +11,12 @@ public class MenuManager : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("LVL1");
+        SwitchScene("LVL1");
+    }
+
+    public static void SwitchScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 
     public void HowToPlay()

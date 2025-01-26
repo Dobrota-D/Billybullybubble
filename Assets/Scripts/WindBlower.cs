@@ -34,7 +34,8 @@ public class WindBlower : MonoBehaviour
 
     void Update()
     {
-
+        if (GameManager.Instance.IsPlayerDead()) return;
+        
         //get mic volume
         int micPosition = Microphone.GetPosition(device) - (decibel + 1); // null means the first microphone
         if (micPosition < 0) return;

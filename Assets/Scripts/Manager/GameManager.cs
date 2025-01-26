@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,23 +8,31 @@ enum GameState
 {
     Menu,
     Playing,
-    Gameover
+    Gameover,
+    PlayerDeath
 }
 
 public class GameManager : MonoBehaviour
 {
-    private static bool _created = false;
-
-    private GameState _state;
-
     public static GameManager Instance = null;
+    public PlayerController _player;
+    
+    private static bool _created = false;
+    private GameState _state;
     private UIManager _uiManager;
+
+    public AudioSource _audioSource;
+    
     private void Awake()
     {
+        _audioSource = GetComponent<AudioSource>();
+        
         if (Instance == null) // If there is no instance already
             Instance = this;
         else if (Instance != this)
             Destroy(gameObject);
+
+        DontDestroyOnLoad(Instance);
     }
 
     void Start()
@@ -43,9 +52,9 @@ public class GameManager : MonoBehaviour
             case GameState.Playing:
                 UpdatePlayingGame();
                 break;
+            case GameState.PlayerDeath:
+                break;
             case GameState.Gameover:
-                string currentSceneName = SceneManager.GetActiveScene().name;
-                SceneManager.LoadScene(currentSceneName);
                 break;
         }
     }
@@ -61,15 +70,26 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.UpdateTimeCounter(Time.time);
     }
 
-    public void GameOver()
+    public void PlayerDeath()
     {
+        Debug.Log("PlayerDeath");
+        SetGameState(GameState.PlayerDeath);
+        
+        // Coroutine
+        _player.PlayerDeath();
         _uiManager.IncrementDeathCount();
-        Debug.Log("Game Over");
-        SetGameState(GameState.Gameover);
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
+        SetGameState(GameState.Playing);
     }
-
+    
     void SetGameState(GameState state)
     {
         _state = state;
+    }
+
+    public bool IsPlayerDead()
+    {
+        return (_state == GameState.PlayerDeath);
     }
 }

@@ -11,15 +11,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] LayerMask m_BackgroundLayer;
     [SerializeField] float distanceFromBubble = 2f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.IsPlayerDead()) return;
+
         var direction = m_Bubble.transform.position - transform.position;
         transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
         if (direction.x < 0)

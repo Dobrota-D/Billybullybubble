@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EndZone : MonoBehaviour
+public class DeathZone : MonoBehaviour
 {
     private GameManager _gameManager;
 
@@ -16,7 +16,7 @@ public class EndZone : MonoBehaviour
     {
         if (other.CompareTag("Bubble"))
         {
-            _gameManager.GameOver();
+            _gameManager.PlayerDeath();
         }
     }
 }

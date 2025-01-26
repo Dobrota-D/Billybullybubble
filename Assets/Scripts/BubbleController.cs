@@ -15,7 +15,7 @@ public class BubbleController : MonoBehaviour
 
     private void Update()
     {
-        if (debugMode)
+        if (debugMode && !GameManager.Instance.IsPlayerDead())
         {
             if (Input.GetKey(KeyCode.W))
             {
@@ -48,7 +48,7 @@ public class BubbleController : MonoBehaviour
     private void ExplodeBubble()
     {
         // Destroy(gameObject);
-        gameManager.GameOver();
+        gameManager.PlayerDeath();
     }
 
     private void IncreaseScale(GameObject other)

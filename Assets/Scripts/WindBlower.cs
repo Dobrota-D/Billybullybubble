@@ -34,7 +34,8 @@ public class WindBlower : MonoBehaviour
 
     void Update()
     {
-
+        if (GameManager.Instance.IsPlayerDead()) return;
+        
         //get mic volume
         int micPosition = Microphone.GetPosition(device) - (decibel + 1); // null means the first microphone
         if (micPosition < 0) return;
@@ -50,7 +51,6 @@ public class WindBlower : MonoBehaviour
 
         // Set the WindForce based on the RMS value
         WindForce = wavePeak * windMultiplier;
-        Debug.Log("WindForce " + WindForce);
 
         // Debug log to monitor WindForce
         // Debug.Log("WindForce: " + WindForce);

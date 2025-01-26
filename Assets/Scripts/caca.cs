@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeathZone : MonoBehaviour
+public class caca : MonoBehaviour
 {
     private GameManager _gameManager;
 
@@ -12,11 +12,11 @@ public class DeathZone : MonoBehaviour
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Bubble"))
-        {
-            _gameManager.PlayerDeath();
-        }
-    }
+    // private void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.CompareTag("Bubble"))
+    //     {
+    //         _gameManager.PlayerDeath();
+    //     }
+    // }
 }

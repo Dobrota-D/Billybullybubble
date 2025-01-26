@@ -15,9 +15,8 @@ enum GameState
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance = null;
-    public PlayerController _player;
+    private PlayerController _player;
     
-    private static bool _created = false;
     private GameState _state;
     private UIManager _uiManager;
 
@@ -39,6 +38,7 @@ public class GameManager : MonoBehaviour
     {
         _uiManager = FindObjectOfType<UIManager>();
         _state = GameState.Menu;
+        _player = TargetManager.Instance.GetGameObject(Target.Player).GetComponent<PlayerController>();
     }
 
     // Update is called once per frame

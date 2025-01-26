@@ -375,9 +375,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 3596892416184995125}
-  micGate: 3
+  micGate: 4
   billyBullRb: {fileID: 0}
-  pushForce: 3
+  pushForce: 0.45
   flapped: 0
 --- !u!114 &4917324676102985343
 MonoBehaviour:

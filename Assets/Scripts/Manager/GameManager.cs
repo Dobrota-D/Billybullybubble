@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public enum GameState
 {
-    Menu,
     Playing,
     Gameover,
     PlayerDeath
@@ -17,7 +16,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance = null;
     
     private GameState _state;
-    private UIManager _uiManager;
 
     public AudioSource _audioSource;
     
@@ -35,8 +33,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        _uiManager = FindObjectOfType<UIManager>();
-        _state = GameState.Menu;
+        _state = GameState.Playing;
     }
 
     // Update is called once per frame
@@ -44,9 +41,6 @@ public class GameManager : MonoBehaviour
     {
         switch (_state)
         {
-            case GameState.Menu:
-                UpdateGameMenu();
-                break;
             case GameState.Playing:
                 UpdatePlayingGame();
                 break;
@@ -56,12 +50,6 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-
-    void UpdateGameMenu()
-    {
-         UIManager.Instance.UpdateTimeCounter(0f);
-    }
-
 
     void UpdatePlayingGame()
     {
@@ -73,7 +61,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("PlayerDeath");
         // Coroutine
         TargetManager.Instance.GetGameObject(Target.Player).GetComponent<PlayerController>().PlayerDeath();
-        _uiManager.IncrementDeathCount();
+        UIManager.Instance.IncrementDeathCount();
     }
 
     public void SetGameState(GameState state)

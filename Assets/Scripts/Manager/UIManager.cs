@@ -23,11 +23,12 @@ public class UIManager : MonoBehaviour
     public void IncrementDeathCount()
     {
         deathCounter++;
+        UpdateBubbleCounter();
     }
 
-    public void UpdateBubbleCounter(float nb)
+    public void UpdateBubbleCounter()
     {
-        m_TryCounter.text = "Essais : " + nb;
+        m_TryCounter.text = "Essais : " + deathCounter;
     }
 
     public void UpdateTimeCounter(float time)

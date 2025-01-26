@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
 
     void UpdateGameMenu()
     {
-        // UIManager.Instance.UpdateTimeCounter(0f);
+         UIManager.Instance.UpdateTimeCounter(0f);
     }
 
 

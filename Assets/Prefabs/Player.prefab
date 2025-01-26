@@ -49,7 +49,7 @@ MonoBehaviour:
   ghost: {fileID: 3214118414963183975}
   bubble: {fileID: 6447291428723119975}
   animator: {fileID: 7895633814842095878}
-  deathAnimationDuration: 3.6
+  deathAnimationDuration: 3.5
   deathSound: {fileID: 8300000, guid: d2aedfbc6c4355d4c9c1e0a08efdd0b5, type: 3}
 --- !u!1001 &485801600679274426
 PrefabInstance:

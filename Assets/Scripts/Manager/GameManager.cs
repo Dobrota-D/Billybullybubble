@@ -4,7 +4,7 @@ using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-enum GameState
+public enum GameState
 {
     Menu,
     Playing,
@@ -71,15 +71,12 @@ public class GameManager : MonoBehaviour
     public void PlayerDeath()
     {
         Debug.Log("PlayerDeath");
-        SetGameState(GameState.PlayerDeath);
-        
         // Coroutine
         TargetManager.Instance.GetGameObject(Target.Player).GetComponent<PlayerController>().PlayerDeath();
         _uiManager.IncrementDeathCount();
-        SetGameState(GameState.Playing);
     }
-    
-    void SetGameState(GameState state)
+
+    public void SetGameState(GameState state)
     {
         _state = state;
     }

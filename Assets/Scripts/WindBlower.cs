@@ -7,7 +7,7 @@ public class WindBlower : MonoBehaviour
     private float[] data;
     public AudioSource audioSource;
     public float micGate;
-    public Rigidbody billyBullRb;
+    public Rigidbody2D billyBullRb;
     public float pushForce = 3f;
     
     public const float windMultiplier = 10f;
@@ -63,6 +63,7 @@ public class WindBlower : MonoBehaviour
     {
         if (WindForce >= micGate)
         {
+            Debug.Log("ApplyWindForce");
             billyBullRb.AddForce(transform.right * pushForce);
         }
     }

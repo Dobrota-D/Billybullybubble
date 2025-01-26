@@ -1,19 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public enum Target
 {
-    Player,
-    Bubble
+    Ghost,
+    Bubble,
+    Player
 }
 
 public class TargetManager : MonoBehaviour
 {
 
+    [FormerlySerializedAs("m_Player")]
     [Header("HiveTarget")]
-    [SerializeField] private GameObject m_Player;
+    [SerializeField] private GameObject m_Ghost;
     [SerializeField] private GameObject m_Bubble;
+    [FormerlySerializedAs("m_PlayerController")]
+    [SerializeField] private GameObject m_Player;
 
     public static TargetManager Instance; // A static reference to the TargetManager instance
 
@@ -29,8 +34,9 @@ public class TargetManager : MonoBehaviour
     {
         return t switch
         {
-            Target.Player => m_Player,
+            Target.Ghost => m_Ghost,
             Target.Bubble => m_Bubble,
+            Target.Player => m_Player,
         };
     }
 }

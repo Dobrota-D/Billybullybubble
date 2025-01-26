@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     public GameObject ghost, bubble;
+    public Animator animator;
     
     [Header("Sound")]
     public AudioClip deathSound;
@@ -18,8 +20,12 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator PlayerDeathCoroutine()
     {
-        GameManager.Instance._audioSource.PlayOneShot(deathSound);
-        Destroy(bubble);
+        animator.SetTrigger("death");
+        GameManager.Instance._audioSource.PlayOneShot(deathSound, 0.5f);
+        yield return new WaitForSeconds(4f);
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
+        // Destroy(bubble);
         yield return null;
     }
 }

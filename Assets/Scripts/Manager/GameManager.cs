@@ -15,7 +15,6 @@ enum GameState
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance = null;
-    private PlayerController _player;
     
     private GameState _state;
     private UIManager _uiManager;
@@ -38,7 +37,6 @@ public class GameManager : MonoBehaviour
     {
         _uiManager = FindObjectOfType<UIManager>();
         _state = GameState.Menu;
-        _player = TargetManager.Instance.GetGameObject(Target.Player).GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -76,10 +74,8 @@ public class GameManager : MonoBehaviour
         SetGameState(GameState.PlayerDeath);
         
         // Coroutine
-        _player.PlayerDeath();
+        TargetManager.Instance.GetGameObject(Target.Player).GetComponent<PlayerController>().PlayerDeath();
         _uiManager.IncrementDeathCount();
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(currentSceneName);
         SetGameState(GameState.Playing);
     }
     

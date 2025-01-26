@@ -36,12 +36,16 @@ public class BubbleController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         Debug.Log("collision");
         if (other.collider.CompareTag("EnemyBubble"))
         {
             IncreaseScale(other.gameObject);
+        }
+        if (other.collider.CompareTag("Wall"))
+        {
+            GameManager.Instance.PlayerDeath();
         }
     }
 

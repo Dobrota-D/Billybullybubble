@@ -49,7 +49,11 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   spritePixelsToUnits: 16
+=======
+  spritePixelsToUnits: 32
+>>>>>>> Stashed changes
 =======
   spritePixelsToUnits: 32
 >>>>>>> Stashed changes
@@ -214,7 +218,11 @@ TextureImporter:
     physicsShape: []
     bones: []
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     spriteID: 919547b1dc7a342488efd71bc2e82221
+=======
+    spriteID: 5e97eb03825dee720800000000000000
+>>>>>>> Stashed changes
 =======
     spriteID: 5e97eb03825dee720800000000000000
 >>>>>>> Stashed changes

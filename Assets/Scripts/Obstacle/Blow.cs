@@ -6,10 +6,7 @@ using UnityEngine;
 public class Blow : MonoBehaviour
 {
     [SerializeField] AudioSource m_audioSource;
-    public float blowForce = 10f;
-    public float radius = 5f;
-    public float upForce = 1f;
-
+    public Vector2 blowForce;
 
     private void Update()
     {
@@ -19,21 +16,15 @@ public class Blow : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Bubble"))
         {
-            Vector3 explosionPos = transform.position;
-            Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
+            Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
 
-            foreach (Collider hit in colliders)
+            if (rb != null)
             {
-                Rigidbody rb = hit.GetComponent<Rigidbody>();
-
-                if (rb != null)
-                {
-                    rb.AddExplosionForce(blowForce, explosionPos, radius, upForce, ForceMode.Impulse);
-                }
+                rb.AddForce(blowForce, ForceMode2D.Impulse);
             }
         }
     }

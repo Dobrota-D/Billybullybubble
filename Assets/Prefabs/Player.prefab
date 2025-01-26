@@ -99,6 +99,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5950949363865832776, guid: e38ce256d3f28f3458e542c96fd0abe6, type: 3}
+      propertyPath: debugMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950949363865832776, guid: e38ce256d3f28f3458e542c96fd0abe6, type: 3}
+      propertyPath: scaleMultiplier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6900790743166333149, guid: e38ce256d3f28f3458e542c96fd0abe6, type: 3}
       propertyPath: m_Name
       value: Bulle

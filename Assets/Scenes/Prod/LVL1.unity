@@ -9671,7 +9671,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &851616661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10976,6 +10976,10 @@ PrefabInstance:
     - target: {fileID: 2001284610783702278, guid: 3acb24a04c690f642993a69778ed43d1, type: 3}
       propertyPath: distanceFromBubble
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267540545305990768, guid: 3acb24a04c690f642993a69778ed43d1, type: 3}
+      propertyPath: pushForce
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5076865943636156091, guid: 3acb24a04c690f642993a69778ed43d1, type: 3}
       propertyPath: m_LocalScale.x

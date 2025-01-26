@@ -32,9 +32,8 @@ public class PlayerController : MonoBehaviour
         bubble.SetActive(false);
         yield return new WaitForSeconds(deathAnimationDuration);
         string currentSceneName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(currentSceneName);
         GameManager.Instance.SetGameState(GameState.Playing);
-        // Destroy(bubble);
+        SceneManager.LoadScene(currentSceneName);
         yield return null;
     }
 

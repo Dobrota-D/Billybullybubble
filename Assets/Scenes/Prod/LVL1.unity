@@ -5716,8 +5716,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00d809b9a6fe714d9ef5b585e851c22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Timer: {fileID: 245926898}
-  m_TryCounter: {fileID: 1189617995}
   deathCounter: 0
 --- !u!4 &423141984
 Transform:
@@ -6059,6 +6057,8 @@ MonoBehaviour:
   m_Ghost: {fileID: 1299132272}
   m_Bubble: {fileID: 1432524877}
   m_Player: {fileID: 959302155}
+  m_Timer: {fileID: 245926898}
+  m_TryCounter: {fileID: 1189617995}
 --- !u!4 &643847155
 Transform:
   m_ObjectHideFlags: 0
@@ -9578,7 +9578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8930439772442895374, guid: ba858c3a754fa0a47a9d9e6783829bc1, type: 3}
       propertyPath: sceneName
-      value: LVL3
+      value: LVL2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

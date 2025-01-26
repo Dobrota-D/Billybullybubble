@@ -5,12 +5,9 @@ public class BubbleController : MonoBehaviour
 {
     public float scaleMultiplier = 1.2f;
     public bool debugMode;
-    
-    private GameManager gameManager;
 
     private void Start()
     {
-       gameManager = FindObjectOfType<GameManager>();
     }
 
     private void Update()
@@ -45,14 +42,14 @@ public class BubbleController : MonoBehaviour
         }
         if (other.collider.CompareTag("Wall"))
         {
-            GameManager.Instance.PlayerDeath();
+            ExplodeBubble();
         }
     }
 
     private void ExplodeBubble()
     {
         // Destroy(gameObject);
-        gameManager.PlayerDeath();
+        GameManager.Instance.PlayerDeath();
     }
 
     private void IncreaseScale(GameObject other)

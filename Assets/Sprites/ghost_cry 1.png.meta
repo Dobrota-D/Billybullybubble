@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 458fb669470a04b95968c50832d9e489
+guid: 3b93d7d7eb0b5a74b8f80b1af7c0286d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -94,20 +94,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -123,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ghost_cry+fart_0
+      name: ghost_cry_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a194720071382004f96887fa64761799
-      internalID: -435869888
+      spriteID: 157f2fc04b2676847bfd2a244ee6b326
+      internalID: -458591138
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ghost_cry+fart_1
+      name: ghost_cry_1
       rect:
         serializedVersion: 2
         x: 32
@@ -158,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d88574e863e69b4294dfe2897d3d992
-      internalID: -1124663901
+      spriteID: ac313f551c31fe345b46006e87e78cca
+      internalID: 1237917202
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ghost_cry+fart_2
+      name: ghost_cry_2
       rect:
         serializedVersion: 2
         x: 64
@@ -179,8 +166,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0724c936e3cd9aa44aeace882d923b0b
-      internalID: -1063380296
+      spriteID: 6952b88a9ebcdfe40a73a25624d56293
+      internalID: 3587821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghost_cry_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88cb408e9ddc65e4aba0b28027a7bcd3
+      internalID: -64590743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghost_cry_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d496e93d1383e8d40a5afa413bd955ac
+      internalID: -1477665205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghost_cry_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c48f27969866e604ab4637da57f411b5
+      internalID: -1760064358
       vertices: []
       indices: 
       edges: []
@@ -188,7 +238,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 17359f66e196d314fbd031ce473091d7
+    spriteID: e08fbce0a7424a04981abe81a4a20fad
     internalID: 0
     vertices: []
     indices: 
@@ -196,9 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ghost_cry+fart_0: -435869888
-      ghost_cry+fart_1: -1124663901
-      ghost_cry+fart_2: -1063380296
+      ghost_cry_0: -458591138
+      ghost_cry_1: 1237917202
+      ghost_cry_2: 3587821
+      ghost_cry_3: -64590743
+      ghost_cry_4: -1477665205
+      ghost_cry_5: -1760064358
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
